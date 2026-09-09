@@ -1,26 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Sonam Tamang</title>
-</head>
+{% extends "portfolio/base.html" %}
 
-<body>
+{% block title %}About | Sonam Tamang{% endblock %}
 
-    <h1>About Me</h1>
+{% block meta_description %}
+Learn more about Sonam Tamang — background, skills, and experience in IT infrastructure and cybersecurity.
+{% endblock %}
 
-    <p>
-        I am an IT Infrastructure and Cybersecurity professional
-        with a background in Information Technology and Cybersecurity.
-    </p>
+{% block content %}
 
-    <p>
-        I have experience in IT infrastructure, technical support,
-        networking, system administration and cybersecurity.
-    </p>
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container text-center">
+        <p class="hero-eyebrow">Get To Know Me</p>
+        <h1 class="page-title">About Me</h1>
+    </div>
+</section>
 
-    <a href="/">Home</a>
+<!-- Bio Section -->
+<section class="section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5 text-center">
+                <div class="about-photo-wrapper">
+                    <!-- Replace with your actual photo later -->
+                    <i class="bi bi-person-circle about-photo-placeholder"></i>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <h2 class="mb-3">Hi, I'm Sonam</h2>
+                <p class="text-muted">
+                    I'm an IT Infrastructure and Cybersecurity Professional with a passion for
+                    building secure, reliable systems. I enjoy solving complex technical problems,
+                    whether that's designing network infrastructure, hardening systems against
+                    threats, or building practical tools with code.
+                </p>
+                <p class="text-muted">
+                    My approach combines hands-on infrastructure experience with a security-first
+                    mindset — I believe good systems aren't just functional, they're resilient
+                    and protected by design.
+                </p>
+                <a href="#" class="btn btn-primary-custom mt-3">
+                    <i class="bi bi-download me-2"></i>Download Resume
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
-</body>
-</html>
+<!-- Skills Section -->
+<section class="section skills-section">
+    <div class="container">
+        <h2 class="text-center mb-5">Skills &amp; Technologies</h2>
+        <div class="row g-4">
+            <div class="col-md-3 col-6">
+                <div class="skill-item">
+                    <i class="bi bi-hdd-network"></i>
+                    <p>Networking</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="skill-item">
+                    <i class="bi bi-shield-lock"></i>
+                    <p>Cybersecurity</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="skill-item">
+                    <i class="bi bi-server"></i>
+                    <p>System Admin</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="skill-item">
+                    <i class="bi bi-code-square"></i>
+                    <p>Python / Django</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="skill-item">
+                    <i class="bi bi-cloud"></i>
+                    <p>Cloud (AWS/Azure)</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="skill-item">
+                    <i class="bi bi-terminal"></i>
+                    <p>Linux</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="skill-item">
+                    <i class="bi bi-diagram-3"></i>
+                    <p>System Design</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="skill-item">
+                    <i class="bi bi-bug"></i>
+                    <p>Threat Analysis</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience Timeline -->
+<section class="section">
+    <div class="container">
+        <h2 class="text-center mb-5">Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2024 — Present</div>
+                <h5>Job Title Here</h5>
+                <p class="text-muted">Company Name — brief description of your role and responsibilities.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2022 — 2024</div>
+                <h5>Previous Job Title</h5>
+                <p class="text-muted">Company Name — brief description of your role and responsibilities.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

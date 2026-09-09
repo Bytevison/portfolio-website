@@ -1,21 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sonam Tamang | IT & Cybersecurity Professional</title>
-</head>
+{% extends "portfolio/base.html" %}
 
-<body>
+{% block title %}Home | Sonam Tamang{% endblock %}
 
-    <h1>Sonam Tamang</h1>
+{% block meta_description %}
+Sonam Tamang — IT Infrastructure and Cybersecurity Professional. Explore my projects, skills, and experience.
+{% endblock %}
 
-    <h2>IT Infrastructure & Cybersecurity Professional</h2>
+{% block content %}
 
-    <p>
-        IT professional with experience in IT infrastructure,
-        technical support, networking and cybersecurity.
-    </p>
+<!-- Hero Section -->
+<section class="hero-section d-flex align-items-center">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <p class="hero-eyebrow">Hello, I'm</p>
+                <h1 class="hero-title">Sonam Tamang</h1>
+                <h2 class="hero-subtitle">IT Infrastructure &amp; Cybersecurity Professional</h2>
+                <p class="hero-text">
+                    I design, secure, and maintain reliable IT systems — combining
+                    infrastructure expertise with a strong focus on cybersecurity
+                    best practices.
+                </p>
+                <div class="hero-buttons">
+                    <a href="{% url 'projects' %}" class="btn btn-primary-custom me-3">View My Work</a>
+                    <a href="{% url 'contact' %}" class="btn btn-outline-light">Get In Touch</a>
+                </div>
+            </div>
+            <div class="col-lg-5 text-center d-none d-lg-block">
+                <div class="hero-graphic">
+                    <i class="bi bi-shield-lock-fill"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-</body>
-</html>
+<!-- Quick Highlights Section -->
+<section class="section">
+    <div class="container">
+        <div class="row g-4 text-center">
+            <div class="col-md-4">
+                <div class="custom-card p-4 h-100">
+                    <i class="bi bi-server highlight-icon"></i>
+                    <h4 class="mt-3">Infrastructure</h4>
+                    <p class="text-muted mb-0">Designing and managing scalable, reliable IT systems.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="custom-card p-4 h-100">
+                    <i class="bi bi-shield-check highlight-icon"></i>
+                    <h4 class="mt-3">Cybersecurity</h4>
+                    <p class="text-muted mb-0">Protecting systems and data with proactive security practices.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="custom-card p-4 h-100">
+                    <i class="bi bi-code-slash highlight-icon"></i>
+                    <h4 class="mt-3">Development</h4>
+                    <p class="text-muted mb-0">Building practical tools and web applications with Python/Django.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

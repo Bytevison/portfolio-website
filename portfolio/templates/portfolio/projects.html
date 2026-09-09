@@ -1,38 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Sonam Tamang</title>
-</head>
+{% extends "portfolio/base.html" %}
+{% load static %}
 
-<body>
+{% block title %}Projects | Sonam Tamang{% endblock %}
 
-    <h1>My Projects</h1>
+{% block meta_description %}
+Explore projects by Sonam Tamang in IT infrastructure, cybersecurity, and software development.
+{% endblock %}
 
-    <h2>Hybrid Machine Learning Intrusion Detection System</h2>
+{% block content %}
 
-    <p>
-        A cybersecurity project using machine learning techniques
-        to detect malicious network activity and anomalies.
-    </p>
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container text-center">
+        <p class="hero-eyebrow">My Work</p>
+        <h1 class="page-title">Projects</h1>
+        <p class="text-muted">A collection of things I've built and worked on.</p>
+    </div>
+</section>
 
-    <h2>Wazuh SIEM Security Lab</h2>
+<!-- Projects Grid -->
+<section class="section pt-0">
+    <div class="container">
+        {% if projects %}
+        <div class="row g-4">
+            {% for project in projects %}
+            <div class="col-md-6 col-lg-4">
+                <div class="custom-card project-card h-100">
+                    {% if project.image %}
+                    <img src="{{ project.image.url }}" class="project-image" alt="{{ project.title }}">
+                    {% else %}
+                    <div class="project-image project-image-placeholder">
+                        <i class="bi bi-code-square"></i>
+                    </div>
+                    {% endif %}
 
-    <p>
-        A virtualised cybersecurity laboratory using Wazuh,
-        Elasticsearch and Kibana for centralised security monitoring
-        and log analysis.
-    </p>
+                    <div class="p-4">
+                        {% if project.featured %}
+                        <span class="badge-featured mb-2">Featured</span>
+                        {% endif %}
+                        <h4>{{ project.title }}</h4>
+                        <p class="text-muted">{{ project.description }}</p>
 
-    <h2>IT Infrastructure & Support Lab</h2>
+                        <div class="tech-badges mb-3">
+                            {% for tech in project.tech_list %}
+                            <span class="tech-badge">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
 
-    <p>
-        Hands-on practice involving networking, Windows/Linux
-        administration, troubleshooting and infrastructure support.
-    </p>
+                        <div class="project-links">
+                            {% if project.github_url %}
+                            <a href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer" class="me-3">
+                                <i class="bi bi-github"></i> Code
+                            </a>
+                            {% endif %}
+                            {% if project.live_url %}
+                            <a href="{{ project.live_url }}" target="_blank" rel="noopener noreferrer">
+                                <i class="bi bi-box-arrow-up-right"></i> Live Demo
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="text-center py-5">
+            <i class="bi bi-folder-x empty-icon"></i>
+            <p class="text-muted mt-3">No projects added yet. Check back soon!</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
 
-    <a href="/">Home</a>
-
-</body>
-</html>
+{% endblock %}
